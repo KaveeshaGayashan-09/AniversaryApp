@@ -1,0 +1,307 @@
+.memories {
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, #ffffff 0%, #ffe5e5 50%, #ffffff 100%);
+}
+
+/* Header */
+.memories-header {
+  text-align: center;
+  padding: 3rem 2rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.memories-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  color: #dc143c;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(220, 20, 60, 0.2);
+}
+
+.memories-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: #e63946;
+  margin-top: 1rem;
+}
+
+/* Timeline */
+.timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #dc143c 0%, #ff6b6b 50%, #dc143c 100%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+}
+
+/* Memory cards */
+.memory-card {
+  position: relative;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.memory-card.left {
+  transform: translateX(-100px);
+  padding-right: 50%;
+  padding-left: 2rem;
+}
+
+.memory-card.right {
+  transform: translateX(100px);
+  padding-left: 50%;
+  padding-right: 2rem;
+}
+
+.memory-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(220, 20, 60, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(220, 20, 60, 0.3);
+}
+
+.card-emoji {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
+}
+
+.card-date {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #e63946;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: #dc143c;
+  text-align: center;
+  margin: 0.5rem 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.card-image {
+  margin: 1.5rem 0;
+}
+
+.memory-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
+
+.memory-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #ffe5e5 0%, #ffbaba 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.memory-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  animation: rotate 8s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.panda-memory {
+  font-size: 5rem;
+  z-index: 2;
+  animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.card-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #a4161a;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Timeline dot */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: #dc143c;
+  border: 4px solid white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 4px #ff6b6b;
+  animation: pulse-dot 2s infinite;
+}
+
+.memory-card.left .timeline-dot {
+  right: -10px;
+}
+
+.memory-card.right .timeline-dot {
+  left: -10px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    box-shadow: 0 0 0 4px #ff6b6b;
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(220, 20, 60, 0.5);
+  }
+}
+
+/* Footer */
+.memories-footer {
+  text-align: center;
+  padding: 4rem 2rem 2rem 2rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.panda-group {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  animation: sway 3s infinite ease-in-out;
+}
+
+.footer-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #dc143c;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .memories-title {
+    font-size: 2.5rem;
+  }
+
+  .memories-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .memory-card.left,
+  .memory-card.right {
+    padding-left: 70px;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .memory-card.left .timeline-dot,
+  .memory-card.right .timeline-dot {
+    left: 20px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-emoji {
+    font-size: 2rem;
+  }
+
+  .card-description {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .panda-memory {
+    font-size: 3rem;
+  }
+
+  .footer-text {
+    font-size: 1.5rem;
+  }
+}

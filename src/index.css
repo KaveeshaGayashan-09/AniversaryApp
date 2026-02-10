@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Page transition */
+.page-transition {
+  animation: fadeInPage 0.5s ease-in;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffe5e5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #dc143c 0%, #ff6b6b 100%);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c1121f 0%, #ff5252 100%);
+}
+
+/* Selection styling */
+::selection {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #ff6b6b;
+  color: #fff;
+}
